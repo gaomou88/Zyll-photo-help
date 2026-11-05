@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Connect Zyll Photo to the system photo picker</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body><main>
+<nav><a href="../en/" aria-current="page">English</a> <a href="../zh-Hans/">简体中文</a> <a href="../zh-Hant/">繁體中文</a> <a href="../ja/">日本語</a></nav>
+<h1>Connect Zyll Photo to the system photo picker</h1>
+<p class="lead">With cloud media connected, the photo picker that other apps open (chat apps, mail, social apps) can show your Zyll Photo cloud library directly. Setup takes about 3 minutes and is done once.</p>
+<section class="card"><h2>What you need</h2><ul><li>Android 15 or later</li><li>Zyll Photo from Google Play, with Pro unlocked</li><li>Wi-Fi (Wireless debugging only works on Wi-Fi; no internet traffic is used)</li><li>About 3 minutes</li></ul></section>
+<h2>Why a separate helper?</h2><p>Android only lets apps on a system allowlist act as a cloud media app. Adding Zyll Photo to that list needs the system&#x27;s debugging permission, which apps from Google Play don&#x27;t use. So this one step is done by a small open-source helper, Zyll Photo Helper. You run it once and then uninstall it. The setting stays.</p>
+<h2 id="download">1. Download and install the helper</h2><ol><li>Open the <a href="https://github.com/gaomou88/Zyll-photo-helper/releases/latest">latest release</a> on your phone and download <code>zyll-photo-helper-vX.Y.Z.apk</code>.</li><li>Open the downloaded file. If Android asks, allow your browser to install unknown apps for this one install. You can turn it off again afterwards.</li><li>Optional: compare the file's SHA-256 with the <code>.sha256</code> file on the release page. The full source code is at <a href="https://github.com/gaomou88/Zyll-photo-helper">GitHub</a>.</li></ol>
+<h2>2. Turn on Developer options</h2><ol><li>Go to <b>Settings → About phone</b> (on some phones: About phone → Software information).</li><li>Tap <b>Build number</b> 7 times until you see "You are now a developer".</li></ol>
+<h2 id="connect">3. Pair and connect</h2><ol><li>Open <b>Zyll Photo Helper</b>, tap <b>Connect</b>, read the list of commands it will run, tick the box and continue.</li><li>Tap <b>Start pairing</b>. Allow notifications if asked. Developer options opens.</li><li>Turn on <b>Wireless debugging</b>, open it, and tap <b>Pair device with pairing code</b>.</li><li>Keep that dialog open. Pull down the notification shade and type the 6-digit code into the helper's notification.</li><li>When you see <b>Paired</b>, go back to the helper and tap <b>Connect</b>. Keep "Turn off wireless debugging when done" ticked.</li></ol>
+<h2>4. Choose Zyll Photo in the photo picker</h2><ol><li>Tap <b>Open photo picker settings</b> in the helper (or open any photo picker, tap ⋮ → Settings).</li><li>Under <b>Cloud media app</b>, choose <b>Zyll Photo</b>.</li><li>Open Zyll Photo. Under <b>Connect cloud media</b> it should now show <b>Connected</b>.</li></ol>
+<h2>5. Uninstall the helper</h2><p>You don't need the helper any more. Tap <b>Uninstall this helper</b> or remove it like any other app. The setting stays.</p>
+<h2 id="undo">Undo</h2><p>Install the helper again, tap <b>Undo</b> and pair the same way. The photo picker goes back to exactly what the system had before. You can also remove old pairings in Developer options → Wireless debugging → Paired devices.</p>
+<h2 id="faq">Questions</h2><dl><dt>Is this safe?</dt><dd>The helper only runs the fixed commands it shows you, only on this phone, and never connects to the internet. The source code is public. Turning wireless debugging off afterwards closes the connection.</dd><dt>Pairing fails or the port is not found</dt><dd>The pairing dialog must stay open while you type the code, and the phone must be on Wi-Fi. If the notification doesn&#x27;t work, use split screen and the manual entry in the helper.</dd><dt>Zyll Photo is not in the Cloud media app list</dt><dd>Restart the phone once, then check again. Some phone makers remove the cloud media feature from their photo picker; in that case it can&#x27;t be used on that phone.</dd><dt>Zyll Photo says &quot;not detected&quot; after a system update</dt><dd>A major system update can reset the setting. Install the helper and connect again.</dd></dl>
+<footer><a href="https://github.com/gaomou88/Zyll-photo-helper">Helper source code</a></footer>
+</main></body></html>

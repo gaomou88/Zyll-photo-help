@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zyll Photo Guide</title>
+<link rel="stylesheet" href="style.css">
+<script>
+// Send visitors to their language; the links below work without JavaScript.
+(function () {
+  var langs = (navigator.languages || [navigator.language || "en"]).map(function (l) { return l.toLowerCase(); });
+  for (var i = 0; i < langs.length; i++) {
+    var l = langs[i];
+    if (/^zh-(hant|tw|hk|mo)/.test(l)) return location.replace("zh-Hant/" + location.hash);
+    if (/^zh/.test(l)) return location.replace("zh-Hans/" + location.hash);
+    if (/^ja/.test(l)) return location.replace("ja/" + location.hash);
+    if (/^en/.test(l)) return location.replace("en/" + location.hash);
+  }
+  location.replace("en/" + location.hash);
+})();
+</script>
+</head>
+<body><main><h1>Zyll Photo Guide</h1><ul><li><a href="en/">English</a></li><li><a href="zh-Hans/">简体中文</a></li><li><a href="zh-Hant/">繁體中文</a></li><li><a href="ja/">日本語</a></li></ul></main></body>
+</html>

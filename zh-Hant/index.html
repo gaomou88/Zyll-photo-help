@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>讓 Zyll 相簿連接系統相片挑選器</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body><main>
+<nav><a href="../en/">English</a> <a href="../zh-Hans/">简体中文</a> <a href="../zh-Hant/" aria-current="page">繁體中文</a> <a href="../ja/">日本語</a></nav>
+<h1>讓 Zyll 相簿連接系統相片挑選器</h1>
+<p class="lead">連接雲端媒體後，其他應用程式（聊天、郵件、社群應用程式等）開啟的系統相片挑選器中，可以直接看到並傳送 Zyll 相簿雲端硬碟中的相片。設定約 3 分鐘，只需做一次。</p>
+<section class="card"><h2>準備工作</h2><ul><li>Android 15 或更新版本</li><li>從 Google Play 安裝的 Zyll 相簿，並已解鎖 Pro</li><li>連線 Wi-Fi（無線偵錯只能在 Wi-Fi 下開啟，不會產生網路流量）</li><li>約 3 分鐘</li></ul></section>
+<h2>為什麼需要獨立的助手工具？</h2><p>Android 只允許系統白名單中的應用程式作為「雲端媒體應用程式」。將 Zyll 相簿加入名單需要用到系統偵錯權限，而 Google Play 上的應用程式不使用這種權限。因此這一步交給開源小工具「Zyll 相簿助手」完成：執行一次後解除安裝即可，設定會保留。</p>
+<h2 id="download">1. 下載並安裝助手</h2><ol><li>在手機上開啟<a href="https://github.com/gaomou88/Zyll-photo-helper/releases/latest">最新版本頁面</a>，下載 <code>zyll-photo-helper-vX.Y.Z.apk</code>。</li><li>開啟下載的檔案。如果系統提示，請允許瀏覽器「安裝不明應用程式」，裝完可以再關閉。</li><li>選用：以發布頁上的 <code>.sha256</code> 檔案核對安裝檔的 SHA-256。完整原始碼在 <a href="https://github.com/gaomou88/Zyll-photo-helper">GitHub</a>。</li></ol>
+<h2>2. 開啟開發人員選項</h2><ol><li>前往 <b>設定 → 關於手機</b>（部分手機在「關於手機 → 軟體資訊」中）。</li><li>連續點按 <b>版本號碼</b> 7 次，直到出現「你現在已成為開發人員」。</li></ol>
+<h2 id="connect">3. 配對並連接</h2><ol><li>開啟 <b>Zyll 相簿助手</b>，點 <b>連接</b>，查看它將執行的指令，勾選同意後繼續。</li><li>點 <b>開始配對</b>，如有提示請允許通知，隨後會開啟開發人員選項。</li><li>開啟 <b>無線偵錯</b>，點進去選擇 <b>使用配對碼配對裝置</b>。</li><li>保持配對對話框開啟，下拉通知欄，在助手的通知中輸入 6 位數配對碼。</li><li>看到 <b>配對成功</b> 後回到助手，點 <b>連接</b>。建議保持勾選「完成後自動關閉無線偵錯」。</li></ol>
+<h2>4. 在相片挑選器中選擇 Zyll 相簿</h2><ol><li>在助手中點 <b>開啟相片挑選器設定</b>（或開啟任一相片挑選器，點 ⋮ → 設定）。</li><li>在 <b>雲端媒體應用程式</b> 中選擇 <b>Zyll 相簿</b>。</li><li>開啟 Zyll 相簿，<b>連接雲端媒體</b> 頁面應顯示 <b>已連線</b>。</li></ol>
+<h2>5. 解除安裝助手</h2><p>之後不再需要助手了。點 <b>解除安裝本助手</b>，或像一般應用程式一樣解除安裝即可，設定會保留。</p>
+<h2 id="undo">如何解除</h2><p>重新安裝助手，點 <b>解除</b>，以相同方式配對即可。相片挑選器會還原成系統原本的設定。也可以在「開發人員選項 → 無線偵錯 → 已配對的裝置」中刪除舊的配對紀錄。</p>
+<h2 id="faq">常見問題</h2><dl><dt>這樣安全嗎？</dt><dd>助手只在本機執行它向你顯示的那幾條固定指令，不連線網際網路，原始碼公開。完成後關閉無線偵錯，連線即中斷。</dd><dt>配對失敗或找不到連接埠</dt><dd>輸入配對碼時配對對話框必須保持開啟，手機必須連著 Wi-Fi。如果通知無法使用，可以分割畫面後在助手中手動輸入連接埠和配對碼。</dd><dt>雲端媒體應用程式列表中沒有 Zyll 相簿</dt><dd>先重新啟動一次手機再看。有些手機廠商移除了相片挑選器的雲端媒體功能，這類手機無法使用。</dd><dt>系統更新後 Zyll 相簿顯示「未偵測到」</dt><dd>大版本系統更新可能會重設這項設定，重新安裝助手再連接一次即可。</dd></dl>
+<footer><a href="https://github.com/gaomou88/Zyll-photo-helper">助手原始碼</a></footer>
+</main></body></html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>让 Zyll 相册接入系统照片选择器</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body><main>
+<nav><a href="../en/">English</a> <a href="../zh-Hans/" aria-current="page">简体中文</a> <a href="../zh-Hant/">繁體中文</a> <a href="../ja/">日本語</a></nav>
+<h1>让 Zyll 相册接入系统照片选择器</h1>
+<p class="lead">接入云端媒体后，其他应用（聊天、邮件、社交应用等）打开的系统照片选择器里，可以直接看到并发送 Zyll 相册网盘里的照片。设置约 3 分钟，只需做一次。</p>
+<section class="card"><h2>准备工作</h2><ul><li>Android 15 或更高版本</li><li>从 Google Play 安装的 Zyll 相册，并已解锁 Pro</li><li>连接 Wi-Fi（无线调试只能在 Wi-Fi 下打开，不会产生网络流量）</li><li>约 3 分钟</li></ul></section>
+<h2>为什么要单独的助手工具？</h2><p>安卓只允许系统白名单里的应用作为“云端媒体应用”。把 Zyll 相册加进名单需要用到系统调试权限，而 Google Play 上的应用不使用这种权限。所以这一步交给一个开源的小工具“Zyll 相册助手”来做：运行一次，然后卸载即可，设置会保留。</p>
+<h2 id="download">1. 下载并安装助手</h2><ol><li>在手机上打开<a href="https://github.com/gaomou88/Zyll-photo-helper/releases/latest">最新版本页面</a>，下载 <code>zyll-photo-helper-vX.Y.Z.apk</code>。</li><li>打开下载的文件。如果系统提示，请允许浏览器“安装未知应用”，装完可以再关掉。</li><li>可选：用发布页上的 <code>.sha256</code> 文件核对安装包的 SHA-256。完整源码在 <a href="https://github.com/gaomou88/Zyll-photo-helper">GitHub</a>。</li></ol>
+<h2>2. 打开开发者选项</h2><ol><li>进入 <b>设置 → 关于手机</b>（部分手机在“关于手机 → 软件信息”里）。</li><li>连续点击 <b>版本号</b> 7 次，直到提示“您已处于开发者模式”。</li></ol>
+<h2 id="connect">3. 配对并接入</h2><ol><li>打开 <b>Zyll 相册助手</b>，点 <b>接入</b>，看一下它将执行的命令，勾选同意后继续。</li><li>点 <b>开始配对</b>，如有提示请允许通知，随后会打开开发者选项。</li><li>打开 <b>无线调试</b>，点进去选择 <b>使用配对码配对设备</b>。</li><li>保持配对对话框打开，下拉通知栏，在助手的通知里输入 6 位配对码。</li><li>看到 <b>配对成功</b> 后回到助手，点 <b>接入</b>。建议保持勾选“完成后自动关闭无线调试”。</li></ol>
+<h2>4. 在照片选择器里选择 Zyll 相册</h2><ol><li>在助手里点 <b>打开照片选择器设置</b>（或任意打开一个照片选择器，点 ⋮ → 设置）。</li><li>在 <b>云端媒体应用</b> 里选择 <b>Zyll 相册</b>。</li><li>打开 Zyll 相册，<b>接入云端媒体</b> 页面应显示 <b>已连接</b>。</li></ol>
+<h2>5. 卸载助手</h2><p>之后不再需要助手了。点 <b>卸载本助手</b>，或像普通应用一样卸载即可，设置会保留。</p>
+<h2 id="undo">如何解除</h2><p>重新安装助手，点 <b>解除</b>，按同样的方式配对即可。照片选择器会恢复成系统原来的设置。也可以在“开发者选项 → 无线调试 → 已配对的设备”里删除旧的配对记录。</p>
+<h2 id="faq">常见问题</h2><dl><dt>这样安全吗？</dt><dd>助手只在本机执行它展示给你的那几条固定命令，不连接互联网，源码公开。完成后关闭无线调试，连接即断开。</dd><dt>配对失败或找不到端口</dt><dd>输入配对码时配对对话框必须保持打开，手机必须连着 Wi-Fi。如果通知不好用，可以分屏后在助手里手动输入端口和配对码。</dd><dt>云端媒体应用列表里没有 Zyll 相册</dt><dd>先重启一次手机再看。有些手机厂商去掉了照片选择器的云端媒体功能，这种手机上无法使用。</dd><dt>系统更新后 Zyll 相册显示“未检测到”</dt><dd>大版本系统更新可能会重置这项设置，重新安装助手再接入一次即可。</dd></dl>
+<footer><a href="https://github.com/gaomou88/Zyll-photo-helper">助手源码</a></footer>
+</main></body></html>
